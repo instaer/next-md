@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import {styled, createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -90,6 +90,14 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
 const defaultTheme = createTheme();
 
 export default function Home({content}) {
+    // 设置页面路由切换时 内容组件滚动到顶部
+    const contentAreaRef = useRef(null);
+    const scrollToTop = () => {
+        if (contentAreaRef.current) {
+            contentAreaRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+    };
+
     const router = useContext(RouterContext);
     const [selectedSlug, setSelectedSlug] = useState(router.query.slug);
 
@@ -105,6 +113,7 @@ export default function Home({content}) {
             setPageLoading(true);
         }
         const handleRouteChangeComplete = (url, {shallow}) => {
+            scrollToTop();
             setPageLoading(false);
         }
 
@@ -298,7 +307,7 @@ export default function Home({content}) {
                 >
                     <Toolbar/>
                     <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
-                        <Grid container spacing={3}>
+                        <Grid container spacing={3} ref={contentAreaRef}>
                             {/* menu content of selected */}
                             <Grid item xs={12}>
                                 <Paper
