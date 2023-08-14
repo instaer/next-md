@@ -1,5 +1,5 @@
 # next-md
-使用[Next.js](https://nextjs.org/)开发的Markdown文档笔记工具。
+基于[Next.js](https://nextjs.org/)、[Material UI](https://mui.com/material-ui/getting-started/)的Markdown文档笔记工具。
 
 ## 环境要求
 
