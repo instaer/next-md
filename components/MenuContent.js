@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import {materialDark} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import {materialOceanic as style} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import nextConfig from 'next.config';
 
 export default function MenuContent({content}) {
@@ -18,7 +18,7 @@ export default function MenuContent({content}) {
                     return !inline && match ? (
                         <SyntaxHighlighter
                             {...props}
-                            style={materialDark}
+                            style={style}
                             language={match[1]}
                             PreTag="div"
                             showLineNumbers

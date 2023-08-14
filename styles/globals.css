@@ -824,7 +824,7 @@
 .markdown-body .highlight pre,
 .markdown-body pre {
     padding: 0;
-    font-size: 90%;
+    font-size: 100%;
     line-height: 1.45;
     background-color: var(--color-canvas-subtle);
     border-radius: 3px;
