@@ -16,13 +16,13 @@
 
 ## 配置修改
 - 指定访问路径前缀
-在`next.config.js`中可以修改标题`title`（默认为`My Document`）以及指定访问路径前缀`basePath`（默认为`/doc`）。
+> 在`next.config.js`中可以修改标题`title`（默认为`My Document`）以及指定访问路径前缀`basePath`（默认为`/doc`）。
 
 - 修改静态导出配置
-默认使用`Next.js`静态导出功能为Markdown文件夹下所有文件生成对应的静态页面，如果在本地或服务端（Node.js环境）运行，请禁用相关的静态导出配置。
+> 默认使用`Next.js`静态导出功能为Markdown文件夹下所有文件生成对应的静态页面，如果在本地或服务端（Node.js环境）运行，请禁用相关的静态导出配置。
 
 - 修改默认图标
-在`public/images`中替换默认图标。
+> 在`public/images`中替换默认图标。
 
 ## 本地构建
 
