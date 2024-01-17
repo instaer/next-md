@@ -22,7 +22,7 @@ export default function MenuItemList({items, selectedItem, onSelectItem, router}
                         <ListItemIcon>
                             {item.key === 'example-doc' ? <TipsAndUpdatesIcon/> : <ArticleIcon/>}
                         </ListItemIcon>
-                        <ListItemText primary={item.label}/>
+                        <ListItemText primary={item.label} sx={{overflow: 'hidden'}}/>
                     </ListItemButton>
                 ))
             }

@@ -226,7 +226,13 @@ export default function Home({content}) {
                                 </li>
                             )}
                             size='medium'
-                            sx={{width: 265, marginRight: 2,}}
+                            sx={{
+                                width: 265, 
+                                marginRight: 2,
+                                [defaultTheme.breakpoints.down('sm')]: {
+                                    display: 'none',
+                                },
+                            }}
                             blurOnSelect={true}
                             renderInput={(params) =>
                                 <TextField {...params}
@@ -280,7 +286,12 @@ export default function Home({content}) {
                         </IconButton>
                     </Toolbar>
                     <Divider/>
-                    <List component="nav">
+                    <List component="nav" 
+                        sx={{
+                            maxHeight: '85vh', 
+                            overflowY: 'auto',
+                        }}
+                    >
                         <MenuItemList
                             items={documentsdata}
                             selectedItem={selectedMenuItem}
@@ -313,10 +324,10 @@ export default function Home({content}) {
                                 <Paper
                                     sx={{p: 2, display: 'flex', flexDirection: 'column',}}>
                                     <MenuContent content={content}/>
+                                    <Copyright sx={{mt: 2}}/>
                                 </Paper>
                             </Grid>
                         </Grid>
-                        <Copyright sx={{pt: 4, position: 'absolute', bottom: 10, left: "50%"}}/>
                     </Container>
                 </Box>
             </Box>
