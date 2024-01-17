@@ -13,6 +13,7 @@ export default function App({Component, pageProps}) {
             <Head>
                 <title>{nextConfig?.env?.title || 'My Document'}</title>
                 <link rel="icon" href={`${nextConfig?.basePath || ''}/favicon.ico`}/>
+                <meta name="format-detection" content="telephone=no"/>
             </Head>
             <Component {...pageProps} />
         </RouterContext.Provider>);
