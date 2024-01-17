@@ -251,7 +251,16 @@ export default function Home({content}) {
                         />
                     </Toolbar>
                 </AppBar>
-                <Drawer variant="permanent" open={open}>
+                <Drawer 
+                    variant="permanent" 
+                    open={open} 
+                    sx={{
+                        ...(!open && {
+                            margin: 0,
+                            display: 'none',
+                        })
+                    }}
+                >
                     <Backdrop
                         open={pageLoading}
                         invisible={true}
@@ -290,6 +299,7 @@ export default function Home({content}) {
                         sx={{
                             maxHeight: '85vh', 
                             overflowY: 'auto',
+                            overflowX: 'hidden',
                         }}
                     >
                         <MenuItemList
@@ -301,6 +311,7 @@ export default function Home({content}) {
                                 setSearchInputValue("");
                             }}
                             router={router}
+                            open={open}
                         />
                     </List>
                 </Drawer>
@@ -317,7 +328,7 @@ export default function Home({content}) {
                     }}
                 >
                     <Toolbar/>
-                    <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
+                    <Container maxWidth="lg" sx={{mt: 0.5, mb: 0.5}} disableGutters>
                         <Grid container spacing={3} ref={contentAreaRef}>
                             {/* menu content of selected */}
                             <Grid item xs={12}>
