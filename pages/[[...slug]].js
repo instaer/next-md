@@ -1,4 +1,5 @@
 import {useContext, useEffect, useRef, useState} from "react";
+import Head from "next/head";
 import {styled, createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -172,6 +173,9 @@ export default function Home({content}) {
 
     return (
         <ThemeProvider theme={defaultTheme}>
+            <Head>
+                <title>{selectedMenuItem?.label}</title>
+            </Head>
             <Box sx={{display: 'flex'}}>
                 <CssBaseline/>
                 <AppBar position="absolute" open={open}>
